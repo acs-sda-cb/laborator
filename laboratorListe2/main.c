@@ -1,4 +1,4 @@
-#include "lg.h"
+#include "lista2.h"
 
 void afisareInt(void *elem) {
     int *aux = elem;
@@ -6,12 +6,13 @@ void afisareInt(void *elem) {
 }
 
 int main() {
+    Lista2 L = NULL;
     int lg = 0;
-    ListaG L = NULL;
-    
-    L = CitireLG(&lg);
-    printf("Dimensiune lista: %d\n", lg);
-    AfisareLG(L, afisareInt);
 
+    L = CitireLista2(&lg);
+    printf("Dimensiune lista: %d\n", lg);
+    AfisareLista2(L, afisareInt);
+
+    DistrugeLista2(&L, free);
     return 0;
 }

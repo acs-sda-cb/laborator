@@ -8,5 +8,6 @@ int main(){
     printf("Dimensiune lista: %d\n", lg);
     AfisareLista(L);
     
+    DistrugeLista(&L);
     return 0;
 }

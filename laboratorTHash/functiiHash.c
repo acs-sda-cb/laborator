@@ -1,4 +1,5 @@
 #include "hash.h"
+#include "lg.h"
 
 /* Initializare Tabela Hash */
 TH *InitTH(size_t M, TFHash funcHash) {
@@ -22,13 +23,13 @@ TH *InitTH(size_t M, TFHash funcHash) {
 
 /* Inserare element in Tabela Hash */
 int InserareTH(TH *h, void *elem, TFCmp funcCmp) {
-    int rezultat, cod;
+    int rezultat = 0, cod;
     ListaG p;
     
     cod = h->funcHash(elem);
     for (p = h->v[cod]; p != NULL; p = p->urm) {
         if (funcCmp(p->info, elem) == 1) {
-            return 1;
+            return 0;
         }
     }
 
@@ -58,13 +59,9 @@ void AfisareTH(TH *h, TFAfis afisareElem) {
 void DistrugeTH(TH **aH, TFElib elibMem) {
     ListaG *p, elem, aux;
 
-    for (p = (*aH)->v; p < (*aH)->v + (*aH)->M; p++) {   /* Nota jos */
-        elem = *p;
-        while (elem) {                                   /* Iterare prin lista */
-            aux = elem;
-            elem = elem->urm;
-            elibMem(aux->info);
-            free(aux);
+    for (p = (*aH)->v; p < ((*aH)->v) + (*aH)->M; p++) {   /* Nota jos */
+        if (p) {
+            DistrugeLG(p, elibMem);
         }
     }
 

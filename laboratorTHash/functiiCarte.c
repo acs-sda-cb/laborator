@@ -36,7 +36,7 @@ int ComparaCarte(void *elem1, void *elem2) {
 
 /* Generare lista generica pe baza 'carti.txt' */
 ListaG GenerareListaCarti(char *numeFisier) {
-	char * line = NULL;
+	char *line = NULL;
 	size_t len = 0;
 	ListaG L = NULL;
     FILE *f = fopen(numeFisier, "rt");
@@ -65,7 +65,8 @@ ListaG GenerareListaCarti(char *numeFisier) {
 		strcpy(carte->editura, editura);
 		InserareLG(&L, carte);
     }
-
+    
+    free(line);
 	fclose(f);
     return L;
 }	

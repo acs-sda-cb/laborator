@@ -1,5 +1,5 @@
 
-# **Laborator 3: Tabele Hash**
+# **Laborator Tabele Hash**
 
 Laboratorul pune la dispoziție 8 fișiere
 <ul>

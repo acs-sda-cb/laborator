@@ -1,5 +1,5 @@
 
-# **Laborator 1: Liste simplu înlănțuite**
+# **Laborator Liste simplu înlănțuite**
 
 Laboratorul pune la dispoziție 3 fișiere
 <ul>

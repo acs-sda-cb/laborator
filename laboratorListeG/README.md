@@ -1,5 +1,5 @@
 
-# **Laborator 2: Liste simplu înlănțuite generice**
+# **Laborator Liste simplu înlănțuite generice**
 
 Laboratorul pune la dispoziție 3 fișiere
 <ul>

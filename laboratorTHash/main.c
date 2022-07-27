@@ -21,7 +21,7 @@ TH *GenerareHash(ListaG listaCarti) {
         if (carte == NULL) {
             return h;
         }
-
+        
         memcpy(carte, celCarte->info, sizeof(Carte));    /* copiere informatie carte */
         rezultat = InserareTH(h, carte, ComparaCarte);   /* inserare carte in Tabela Hash */
         if (rezultat == 0) {
